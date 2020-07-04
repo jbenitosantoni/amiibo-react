@@ -1,0 +1,18 @@
+.image:hover {
+  background-color: #0a0a0a;
+}
+
+.thumbnail:hover .caption {
+  border: solid whitesmoke 2px;
+}
+
+.caption {
+  border: transparent solid 2px;
+  background-color: #0a0a0a;
+  cursor: default;
+}
+
+.content {
+  width: 80%;
+  height: 80vh;
+}
