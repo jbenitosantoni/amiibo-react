@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {Gallery} from "./components/Gallery";
+import {Gallery} from "./components/gallery/Gallery";
 
 export function Amiibos() {
     const [amiibos, setAmiibo] = useState(0);

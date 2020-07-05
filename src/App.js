@@ -7,7 +7,6 @@ import {Home} from "./components/pages/Home";
 import {Amiibo} from "./components/pages/amiibo/Amiibo";
 import {useTranslation} from "react-i18next";
 
-
 function App() {
     const {t, i18n} = useTranslation();
     return (

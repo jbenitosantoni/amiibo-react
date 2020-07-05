@@ -5,5 +5,7 @@
   "message": "Message",
   "submit": "Submit",
   "home": "Home",
-  "contact": "Contact"
+  "contact": "Contact",
+  "required": "This is required*",
+  "validEmail": "Email must be valid!"
 }
