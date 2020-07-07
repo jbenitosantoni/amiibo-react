@@ -21,7 +21,7 @@ export function Amiibos() {
         if (filterValues.amiiboName === "") {
             consulta.push('filterValues.amiiboName === ""');
         } else {
-            consulta.push("amiibos[i].character === filterValues.amiiboName");
+            consulta.push("amiibos[i].character.toLowerCase() === filterValues.amiiboName.toLowerCase()");
         }
         if (filterValues.gameSeries === "") {
             consulta.push('filterValues.gameSeries === ""');

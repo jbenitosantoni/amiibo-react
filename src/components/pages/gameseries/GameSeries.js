@@ -3,32 +3,44 @@ import './style.scss';
 import axios from "axios";
 
 export function GameSeries(props) {
-    const [amiibos, setAmiibo] = useState(0);
-    let draw = [];
+    const [uniq, setUnique] = useState([]);
+    const [list, setList] = useState([]);
     useEffect(() => {
         axios.get('https://www.amiiboapi.com/api/gameseries').then(res => {
-            setAmiibo(res.data.amiibo);
+            let localUniq = [];
+            for (let i = 0; i < res.data.amiibo.length; i++) {
+                localUniq.push(res.data.amiibo[i].name)
+            }
+            localUniq = [...new Set(localUniq)].sort();
+            push(localUniq);
+            setUnique(localUniq);
         })
     }, []);
-    let array = [];
-    for (let i = 0; i < amiibos.length; i++) {
-        array.push(amiibos[i].name)
+
+    function reverseSort() {
+        setUnique(uniq.reverse());
+        push(uniq);
     }
-    let uniq = [...new Set(array)];
-    for (let i = 0; i < uniq.length; i++) {
-        if (amiibos[i])
-            draw.push(
+
+    function push(uniq) {
+        let array = [];
+        for (let i = 0; i < uniq.length; i++) {
+            array.push(
                 <div key={(i)} className="col-md-4 image">
                     <div className="thumbnail">
                         <div className="caption"><p>{uniq[i]}</p></div>
                     </div>
                 </div>
             );
+            setList(array);
+        }
     }
+
     return (
         <div className="container">
+            <button onClick={reverseSort}>Reverse Order</button>
             <div className="row">
-                {draw}
+                {list}
             </div>
         </div>
     );
