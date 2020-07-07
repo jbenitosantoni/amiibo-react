@@ -12,7 +12,7 @@ export function Gallery(props) {
                 <a href={"amiibo/" + props[i].tail}>
                     <div className="thumbnail">
                         <img src={props[i].image} alt="Lights"
-                             style={{height: '200px', width: '100px'}}/>
+                             style={{height: '200px', width: '120px'}}/>
                         <div className="caption"><p>{props[i].name}</p></div>
                     </div>
                 </a>

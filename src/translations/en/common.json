@@ -7,5 +7,7 @@
   "home": "Home",
   "contact": "Contact",
   "required": "This is required*",
-  "validEmail": "Email must be valid!"
+  "validEmail": "Email must be valid!",
+  "reverseOrder": "Reverse Order",
+  "amiiboName": "Amiibo Name"
 }

@@ -6,12 +6,14 @@ import {Contact} from "./components/pages/contact/Contact";
 import {Home} from "./components/pages/Home";
 import {Amiibo} from "./components/pages/amiibo/Amiibo";
 import {useTranslation} from "react-i18next";
+import {Header} from "./components/header/Header";
 
 function App() {
     const {t, i18n} = useTranslation();
     return (
         <Router>
             <div className="App">
+                <Header/>
                 <nav className="">
                     <ul className="b-list">
                         <li className="b-list__lists">

@@ -7,6 +7,8 @@
   "home": "Inicio",
   "contact": "Contacto",
   "required": "Este campo es requerido*",
-  "validEmail": "¡Email debe ser valido!"
+  "validEmail": "¡Email debe ser valido!",
+  "reverseOrder": "Invertir Orden",
+  "amiiboName": "Nombre Amiibo"
 }
 

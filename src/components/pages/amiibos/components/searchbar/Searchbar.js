@@ -1,9 +1,11 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
+import {useTranslation} from "react-i18next";
 
 export function SearchBar(props) {
     let gameSeries = [];
     let options = [];
+    const {t, i18n} = useTranslation();
     const {register, handleSubmit, errors} = useForm();
     const onSubmit = data => props.fnSubmit(data);
     console.log(errors);
@@ -21,7 +23,7 @@ export function SearchBar(props) {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <input type="text" placeholder="Amiibo Name" name="amiiboName" ref={register}/>
+                <input type="text" placeholder={t('amiiboName')} name="amiiboName" ref={register}/>
             </div>
             <div>
                 <select name="gameSeries" ref={register}>
@@ -37,7 +39,7 @@ export function SearchBar(props) {
                 </select>
             </div>
             <div>
-                <input type="submit"/>
+                <input type="submit" value={t('submit')}/>
             </div>
         </form>
     );

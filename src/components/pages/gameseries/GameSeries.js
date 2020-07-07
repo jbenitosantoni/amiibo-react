@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss';
 import axios from "axios";
+import {useTranslation} from "react-i18next";
 
 export function GameSeries(props) {
     const [uniq, setUnique] = useState([]);
     const [list, setList] = useState([]);
+    const {t, i18n} = useTranslation();
+
     useEffect(() => {
         axios.get('https://www.amiiboapi.com/api/gameseries').then(res => {
             let localUniq = [];
@@ -38,7 +41,7 @@ export function GameSeries(props) {
 
     return (
         <div className="container">
-            <button onClick={reverseSort}>Reverse Order</button>
+            <button onClick={reverseSort}>{t('reverseOrder')}</button>
             <div className="row">
                 {list}
             </div>
